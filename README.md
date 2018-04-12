@@ -27,6 +27,7 @@ $ npm install css-loader vue-template-compiler --save
 打开浏览器可以看到index.js中的内容可以打印到控制台
 #新建vue项目
 在src文件下创建app.vue文件，并在其中定义模块
+``` javascript
 <template>
   <div id="myapp">
       <header-tab></header-tab>
@@ -80,7 +81,7 @@ $ npm install css-loader vue-template-compiler --save
         color: #42b983;
     }
 </style>
-
+```
 在src文件下新建components文件夹`views文件夹。
 在components文件下新建header.vue文件（公共组件头部）
 <template>
