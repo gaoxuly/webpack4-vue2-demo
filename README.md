@@ -6,6 +6,7 @@ webpack下，所有类型的文件都可以是module，包括js`css`图片`json�
 
 # VUE项目
 新建项目目录，并且初始化项目
+
 $ mkdir demo-wv2 //新建项目目录
 $ npm init       //初始化项目
 安装webpack`vue`vue-loader(vue加载器)
@@ -84,6 +85,7 @@ $ npm install css-loader vue-template-compiler --save
 ```
 在src文件下新建components文件夹`views文件夹。
 在components文件下新建header.vue文件（公共组件头部）
+``` javascript
 <template>
   <div>
       <h1>公共header</h1>
@@ -127,13 +129,16 @@ $ npm install css-loader vue-template-compiler --save
   }
 }
 </style>
+```
 
 在views文件下新建home.vue about.vue（页面）
+``` javascript
 //about.vue
 <template>
   <div>about</div>
 </template>
-
+```
+``` javascript
 //home.vue
 <template>
   <div>
@@ -164,7 +169,9 @@ $ npm install css-loader vue-template-compiler --save
         }
     }
 </script>
+```
 
+```javascript
 在src文件根目录下新建routes.js作为路由配置文件。
 import Vue from 'vue'; 
 import Router from 'vue-router';
@@ -183,11 +190,13 @@ export default new Router({
         }
     ]
 })
+```
 
 
 安装依赖项：style-loader` url-loader` file-loader` less` less-loader
 
 在根目录下创建webpack配置文件 webpack.config.js文件
+``` javascript
 const path = require('path');//加载path模块
 module.exports ={
     mode:'development',//定义打包运行的类型  webpack4+新增
@@ -231,7 +240,9 @@ module.exports ={
         ]
     }
 }
+```
 编辑index.js文件
+``` javascript
 import Vue from 'vue';//引入vue
 import App from './app.vue';//引入vue入口文件
 import router from './routes.js'; //引入路由
@@ -243,6 +254,7 @@ new Vue({
     el: "#appIndex",
     render: (h) => h(App)
 })
+```
 
 运行npx webpack --mode development 可以进行打包，会多出来一个dist文件，并且生成main.js.
 
